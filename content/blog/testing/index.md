@@ -1,8 +1,8 @@
 ---
 title: "Vom Kabel bis zu Cluster - Physische Realität verstehen"
 date: "2026-01-09"
-description: "Ein vollständiger Leitfaden für den Aufbau eines stabilen, skalierbaren Proxmox-Clusters – inklusive Netzwerkdesign, Storage-Strategie und Cluster-Konfiguration."
-tags: ["Virtualisierung", "Cluster", "HomeLab"] 
+description: "Technische Systeme beginnen nicht im Code, sondern in der physischen Welt: Strom, Hardware, Verkabelung, Rackdesign. Wer IT‑Infrastruktur wirklich verstehen will, muss die materielle Basis begreifen"
+tags: ["Hardware", "HomeLab"] 
 ---
 
 ## Einleitung
