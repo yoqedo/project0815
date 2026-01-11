@@ -1,232 +1,131 @@
 ---
-title: Hyper V Network configuration
+title: Hyper V Netzwerk einfach erklärt
 date: "2025-05-01T22:12:03.284Z"
-description: "Descriped Hyper V for Students"
-tags: ["hyper-v"]
+description: "Hyper V Netzwerk einfach erklärt"
+tags: ["hyper-v", "Compute", "Network"]
 ---
+## 🧱 1. Physische Netzwerkkarten (NICs)
 
-This is my first post on my new fake blog! How exciting!
+Ein Server hat mehrere Netzwerkkarten.
+Bei Hyper‑V nutzt man:
 
-I'm sure I'll write a lot more interesting things in the future.
+- **NIC1 (1Gbit)** → nur für Management
+- **NIC2 + NIC3 (25Gbit)** → für alles, was schnell sein muss (VMs, Cluster, Storage)
 
-Oh, and here's a great quote from this Wikipedia on
-[salted duck eggs](https://en.wikipedia.org/wiki/Salted_duck_egg).
+NIC2 und NIC3 werden später **zusammengebündelt**, damit sie wie **eine große Leitung** funktionieren.
 
-> A salted duck egg is a Chinese preserved food product made by soaking duck
-> eggs in brine, or packing each egg in damp, salted charcoal. In Asian
-> supermarkets, these eggs are sometimes sold covered in a thick layer of salted
-> charcoal paste. The eggs may also be sold with the salted paste removed,
-> wrapped in plastic, and vacuum packed. From the salt curing process, the
-> salted duck eggs have a briny aroma, a gelatin-like egg white and a
-> firm-textured, round yolk that is bright orange-red in color.
+**Hyper‑V‑Host 1G‑Ports**
 
-![Chinese Salty Egg](./salty_egg.jpg)
+Ein Hyper‑V‑Server hat zwei Arten von Management:
 
-You can also write code blocks here!
+**1. Out‑of‑Band‑Management (1G‑Port)**
 
-```js
-const saltyDuckEgg = "chinese preserved food product"
-```
+- eigener kleiner Computer im Server (iLO / iDRAC)
+- funktioniert auch wenn Windows kaputt ist
+- für BIOS, Remote‑Konsole, Einschalten, Updates
+- NICHT für Hyper‑V oder Windows‑Traffic
+- NICHT VLAN‑fähig
+- NICHT redundant
 
-| Number | Title                                    | Year |
-| :----- | :--------------------------------------- | ---: |
-| 1      | Harry Potter and the Philosopher’s Stone | 2001 |
-| 2      | Harry Potter and the Chamber of Secrets  | 2002 |
-| 3      | Harry Potter and the Prisoner of Azkaban | 2004 |
+**2. In‑Band‑Management (vNIC im vSwitch)**
 
-[View raw (TEST.md)](https://raw.github.com/adamschwartz/github-markdown-kitchen-sink/master/README.md)
+- läuft über die schnellen 25G‑Ports
+- Teil des SET‑Teams → redundant
+- VLAN‑fähig
+- kann mit Cluster, Storage, Firewall interagieren
+- ist das „echte“ Windows‑Management
 
-This is a paragraph.
+Darum braucht man **beides**:
 
-    This is a paragraph.
+- 1G → Notfall & Hardware‑Management
+- vNIC → normales Windows‑/Hyper‑V‑Management
 
-# Header 1
+## Grafik
 
-## Header 2
-
-    Header 1
-    ========
-
-    Header 2
-    --------
-
-# Header 1
-
-## Header 2
-
-### Header 3
-
-#### Header 4
-
-##### Header 5
-
-###### Header 6
-
-    # Header 1
-    ## Header 2
-    ### Header 3
-    #### Header 4
-    ##### Header 5
-    ###### Header 6
-
-# Header 1
-
-## Header 2
-
-### Header 3
-
-#### Header 4
-
-##### Header 5
-
-###### Header 6
-
-    # Header 1 #
-    ## Header 2 ##
-    ### Header 3 ###
-    #### Header 4 ####
-    ##### Header 5 #####
-    ###### Header 6 ######
-
-> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
-
-    > Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
-
-> ## This is a header.
->
-> 1. This is the first list item.
-> 2. This is the second list item.
->
-> Here's some example code:
->
->     Markdown.generate();
-
-    > ## This is a header.
-    > 1. This is the first list item.
-    > 2. This is the second list item.
-    >
-    > Here's some example code:
-    >
-    >     Markdown.generate();
-
-- Red
-- Green
-- Blue
-
-* Red
-* Green
-* Blue
-
-- Red
-- Green
-- Blue
-
-```markdown
-- Red
-- Green
-- Blue
-
-* Red
-* Green
-* Blue
-
-- Red
-- Green
-- Blue
-```
-
-- `code goes` here in this line
-- **bold** goes here
-
-```markdown
-- `code goes` here in this line
-- **bold** goes here
-```
-
-1. Buy flour and salt
-1. Mix together with water
-1. Bake
-
-```markdown
-1. Buy flour and salt
-1. Mix together with water
-1. Bake
-```
-
-1. `code goes` here in this line
-1. **bold** goes here
-
-```markdown
-1. `code goes` here in this line
-1. **bold** goes here
-```
-
-Paragraph:
-
-    Code
-
-<!-- -->
-
-    Paragraph:
-
-        Code
+![simple clean network.png](attachment:c98e6607-6573-497a-ab92-abe1261ae06a:simple_clean_network.png)
 
 ---
 
----
+## 🔗 2. SET‑Team (NIC‑Bündelung)
+
+NIC2 und NIC3 werden zu einem **SET‑Team** zusammengefasst.
+
+Das bedeutet:
+
+- Mehr Geschwindigkeit (25G + 25G = 50G)
+- Redundanz (wenn eine NIC ausfällt, läuft alles weiter)
+- Hyper‑V sieht nur **eine große NIC**
 
 ---
 
----
+## 🌐 3. vSwitch (virtueller Switch)
+
+Auf dem SET‑Team wird ein **vSwitch** erstellt.
+
+Der vSwitch ist wie ein **virtueller Netzwerk‑Verteiler** im Server.
+
+Er verteilt den gesamten Traffic:
+
+- zu den VMs
+- zu den virtuellen NICs des Hosts
+- zu den VLANs
+- zum Core‑Switch
 
 ---
 
-    * * *
+## 🏷️ 4. VLANs auf dem Switch
 
-    ***
+**Wichtig:**
 
-    *****
+VLANs werden **immer auf dem physischen Switch** erstellt, nicht im Server.
 
-    - - -
+Beispiel:
 
-    ---------------------------------------
+- VLAN 10 → Management
+- VLAN 20 → Server‑VMs
+- VLAN 30 → Storage
+- VLAN 40 → Cluster
+- VLAN 50 → Live Migration
 
-This is [an example](http://example.com "Example") link.
+Die Ports, an denen NIC2 und NIC3 hängen, werden als **Trunk‑Ports** konfiguriert.
 
-[This link](http://example.com) has no title attr.
+Ein Trunk‑Port lässt **alle VLANs gleichzeitig** durch.
 
-This is [an example][id] reference-style link.
+---
 
-[id]: http://example.com "Optional Title"
+## 🧠 5. vNICs für den Host
 
-    This is [an example](http://example.com "Example") link.
+Der Hyper‑V Host braucht eigene virtuelle Netzwerkkarten (vNICs), z. B.:
 
-    [This link](http://example.com) has no title attr.
+- vNIC‑Management → VLAN 10
+- vNIC‑Cluster → VLAN 40
+- vNIC‑LiveMigration → VLAN 50
+- vNIC‑Storage → VLAN 30
 
-    This is [an example] [id] reference-style link.
+Diese vNICs hängen am vSwitch und bekommen **eigene IP‑Adressen**.
 
-    [id]: http://example.com "Optional Title"
+---
 
-_single asterisks_
+## 🖥️ 6. VLANs für die VMs
 
-_single underscores_
+Die VMs bekommen **keine vNICs**, sondern **VM‑Adapter**.
 
-**double asterisks**
+Jede VM bekommt ihr eigenes VLAN:
 
-**double underscores**
+- VM1 → VLAN 20
+- VM2 → VLAN 20
+- VM3 → VLAN 30
 
-    *single asterisks*
+Der Host selbst bekommt **keine IP in VLAN 20**, weil VLAN 20 nur für die VMs ist.
 
-    _single underscores_
+---
 
-    **double asterisks**
+## 🎯 Kurz zusammengefasst
 
-    __double underscores__
-
-This paragraph has some `code` in it.
-
-    This paragraph has some `code` in it.
-
-![Alt Text](https://via.placeholder.com/200x50 "Image Title")
-
-    ![Alt Text](https://via.placeholder.com/200x50 "Image Title")
+- VLANs entstehen **auf dem Switch**
+    - NIC2 + NIC3 werden zu einem **SET‑Team**
+    - Der **vSwitch** sitzt auf dem SET‑Team
+    - Der Switch‑Port ist ein **Trunk** (alle VLANs erlaubt)
+    - Der Host bekommt **vNICs** für Management, Cluster, Storage, Live Migration
+    - Die VMs bekommen **VLAN‑Tags**, aber der Host nicht
+    - VLAN 20 ist **nur für die VMs**, nicht für den Host
