@@ -1,5 +1,5 @@
 ---
-title: "Vom Kabel bis zu Cluster"
+title: "Vom Kabel bis zu Cluster - Physische Realität verstehen"
 date: "2026-01-09"
 description: "Ein vollständiger Leitfaden für den Aufbau eines stabilen, skalierbaren Proxmox-Clusters – inklusive Netzwerkdesign, Storage-Strategie und Cluster-Konfiguration."
 tags: ["Virtualisierung", "Cluster", "HomeLab"] 
