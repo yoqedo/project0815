@@ -484,20 +484,18 @@ html.dark-mode .filter-btn.active {
 
 
 .bio-avatar {
-  height: 80px;
-  width: 80px;
+  
   border-radius: 50%;
-  object-fit: cover;
   min-width: unset;
   aspect-ratio: 1;
   flex-shrink: 0;
-  margin-right: var(--spacing-4);
+  margin-right: var(--spacing-1);
+  overflow: hidden;
 }
 
 .bio-avatar img {
-  border-radius: 50%;
-  width: 100%;
-  height: 100%;
+ 
+ 
   object-fit: cover;
   display: block;
 }
