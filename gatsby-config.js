@@ -9,15 +9,18 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Project0815`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Luk Bergen`,
+      role: `System Engineer & IT Architect`,
+      bio: `Fokus auf Proxmox, Hyper-V, Netzwerke, Storage und Enterprise-Design. Ich baue klare Systeme und klare Dokumentation.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    description: `Technische Dokumentation, Labs und Architektur.`,
+    siteUrl: `https://project0815.com`,
     social: {
       twitter: `kylemathews`,
+      github: 'https://github.com/yoqedo',
+      email: 'kontakt@project0815.de'
     },
   },
   plugins: [
@@ -110,15 +113,15 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `Gatsby`,
+        name: `Project0815`,
+        short_name: `Project0815`,
         start_url: `/`,
         background_color: `#ffffff`,
         // This will impact how browsers show your PWA/website
         // https://css-tricks.com/meta-theme-color-and-trickery/
         // theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/profile-pic.png`, // This path is relative to the root of the site.
       },
     },
   ],

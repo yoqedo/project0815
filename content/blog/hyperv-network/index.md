@@ -1,8 +1,8 @@
 ---
-title: Hello World
-date: "2015-05-01T22:12:03.284Z"
-description: "Hello World"
-tags: ["blogging", "first-post"]
+title: Hyper V Network configuration
+date: "2025-05-01T22:12:03.284Z"
+description: "Descriped Hyper V for Students"
+tags: ["hyper-v"]
 ---
 
 This is my first post on my new fake blog! How exciting!
