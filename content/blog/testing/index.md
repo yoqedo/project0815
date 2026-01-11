@@ -10,3 +10,31 @@ tags: ["Hardware", "HomeLab"]
 Technische Systeme beginnen nicht im Code, sondern in der physischen Welt: Strom, Hardware, Verkabelung, Rackdesign. Wer IT‑Infrastruktur wirklich verstehen will, muss die materielle Basis begreifen — von der Netzwerkkarte bis zum Hypervisor, vom Patchpanel bis zur Stromverteilung. Dieser Blog dokumentiert den Aufbau reproduzierbarer Homelabs und professioneller Architekturen, in denen physische Realität nicht nur Voraussetzung, sondern gestaltbares Element ist. Ziel ist es, Klarheit zu schaffen: durch strukturierte Dokumentation, modulare Designs und ein tiefes Verständnis für das, was unter der Oberfläche wirkt
 
 ---
+
+## 🧱 **1. Was ist ein Netzwerkport?**
+
+Ein Port ist einfach ein Loch, in das du ein Kabel steckst.
+Folgende Datenübertragung sind aktuell:
+
+- RJ45 = Kupfer, 1Gbit oder 10Gbit
+- SFP+ = Glasfaser, 10Gbit
+- SFP28 = Glasfaser, 25Gbit
+- QSFP+ = Glasfaser, 40Gbit
+- QSFP28 = Glasfaser, 100Gbit
+
+**Kupfer** überträgt elektrische Signale über Metall, ist billiger und einfacher bei der Installation.
+Ist Störungsanfälliger und hat eine begrenzte Geschwindigkeit und Reichweite.**RJ45 ist langsam.**
+
+**Glasfaser4** überträgt Daten mit Lichtgeschwindigkeit! Deutlich höhere Bandbreite und geht auch über
+längere Distanzen.**SFP+ / SFP28 ist schnell.**
+
+## 🔌 **2. Was ist ein Switch?**
+
+Ein Switch ist wie ein Verteilerkasten.
+
+- Er verbindet Geräte miteinander
+- Er entscheidet, wohin Daten gehen
+- Er kann VLANs trennen
+- Er kann Ports als Access oder Trunk konfigurieren
+
+
