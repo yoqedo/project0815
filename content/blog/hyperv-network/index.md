@@ -1,6 +1,6 @@
 ---
 title: Hyper V Netzwerk einfach erklärt
-date: "2025-05-01T22:12:03.284Z"
+date: "2025-10-10T22:12:03.284Z"
 description: "Viele IT‑Labs scheitern nicht an Hyper‑V selbst, sondern am Netzwerk dahinter. Begriffe wie vSwitch, NIC Teaming, vNICs, Management Adapter oder Trunking wirken schnell kompliziert – dabei ist das Hyper‑V Netzwerkmodell eigentlich sehr logisch aufgebaut."
 tags: ["hyper-v", "Compute", "Network"]
 ---
