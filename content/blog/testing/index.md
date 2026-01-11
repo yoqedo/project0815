@@ -7,7 +7,6 @@ tags: ["Virtualisierung", "Cluster", "HomeLab"]
 
 ## Einleitung
 
-Ein Proxmox-Cluster ist schnell erstellt – aber ein **stabiler**, **skalierbarer** und **sauber strukturierter** Cluster erfordert Planung.  
-In diesem Beitrag zeige ich dir eine Architektur, die sowohl im Homelab als auch in Enterprise-Umgebungen funktioniert.
+Technische Systeme beginnen nicht im Code, sondern in der physischen Welt: Strom, Hardware, Verkabelung, Rackdesign. Wer IT‑Infrastruktur wirklich verstehen will, muss die materielle Basis begreifen — von der Netzwerkkarte bis zum Hypervisor, vom Patchpanel bis zur Stromverteilung. Dieser Blog dokumentiert den Aufbau reproduzierbarer Homelabs und professioneller Architekturen, in denen physische Realität nicht nur Voraussetzung, sondern gestaltbares Element ist. Ziel ist es, Klarheit zu schaffen: durch strukturierte Dokumentation, modulare Designs und ein tiefes Verständnis für das, was unter der Oberfläche wirkt
 
 ---
