@@ -1,6 +1,6 @@
 ---
 title: "Vom Kabel bis zu Cluster - Physische Realität verstehen"
-date: "2025-01-10"
+date: "2025-10-10"
 description: "Technische Systeme beginnen nicht im Code, sondern in der physischen Welt: Strom, Hardware, Verkabelung, Rackdesign. Wer IT‑Infrastruktur wirklich verstehen will, muss die materielle Basis begreifen"
 tags: ["Hardware", "HomeLab"] 
 ---
