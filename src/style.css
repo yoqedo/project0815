@@ -489,7 +489,7 @@ html.dark-mode .filter-btn.active {
   min-width: unset;
   aspect-ratio: 1;
   flex-shrink: 0;
-  margin-right: var(--spacing-1);
+  margin-right: var(--spacing-3);
   overflow: hidden;
 }
 
