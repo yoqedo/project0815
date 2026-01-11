@@ -1,7 +1,7 @@
 ---
 title: Hyper V Netzwerk einfach erklärt
 date: "2025-05-01T22:12:03.284Z"
-description: "Viele IT‑Labs scheitern nicht an Hyper‑V selbst, sondern am Netzwerk dahinter. Begriffe wie **vSwitch**, **NIC Teaming**, **vNICs**, **Management Adapter** oder **Trunking** wirken schnell kompliziert – dabei ist das Hyper‑V Netzwerkmodell eigentlich sehr logisch aufgebaut."
+description: "Viele IT‑Labs scheitern nicht an Hyper‑V selbst, sondern am Netzwerk dahinter. Begriffe wie vSwitch, NIC Teaming, vNICs, Management Adapter oder Trunking wirken schnell kompliziert – dabei ist das Hyper‑V Netzwerkmodell eigentlich sehr logisch aufgebaut."
 tags: ["hyper-v", "Compute", "Network"]
 ---
 Viele IT‑Labs scheitern nicht an Hyper‑V selbst, sondern am Netzwerk dahinter.  
@@ -50,9 +50,7 @@ Darum braucht man **beides**:
 - vNIC → normales Windows‑/Hyper‑V‑Management
 
 ## Grafik
-
-![simple clean network.png](attachment:c98e6607-6573-497a-ab92-abe1261ae06a:simple_clean_network.png)
-
+![Local image](/einfache_erklärung_server_nic.png)
 ---
 
 ## 🔗 2. SET‑Team (NIC‑Bündelung)
