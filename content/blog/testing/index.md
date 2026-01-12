@@ -28,6 +28,8 @@ Ist Störungsanfälliger und hat eine begrenzte Geschwindigkeit und Reichweite.*
 **Glasfaser4** überträgt Daten mit Lichtgeschwindigkeit! Deutlich höhere Bandbreite und geht auch über
 längere Distanzen.**SFP+ / SFP28 ist schnell.**
 
+---
+
 ## 🔌 **2. Was ist ein Switch?**
 
 Ein Switch ist wie ein Verteilerkasten.
@@ -36,6 +38,8 @@ Ein Switch ist wie ein Verteilerkasten.
 - Er entscheidet, wohin Daten gehen
 - Er kann VLANs trennen
 - Er kann Ports als Access oder Trunk konfigurieren
+
+---
 
 ## 🏷️ **3. Was ist ein VLAN?**
 
@@ -50,6 +54,8 @@ Beispiel:
 - VLAN 50 = Cluster
 
 Ein VLAN ist wie ein eigenes Zimmer im selben Haus.
+
+---
 
 ## 🔀 **4. Was ist ein Access‑Port?**
 
