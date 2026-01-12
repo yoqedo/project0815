@@ -2,7 +2,7 @@
 title: "Storage verstehen: Wie Daten in der physischen Realität wirklich gespeichert werden"
 date: "2025-11-08"
 description: "Warum Storage das Fundament jeder Infrastruktur ist – und warum Cluster ohne korrektes Storage‑Design scheitern."
-tags: ["Storage", "Proxmox", "Cluster", "Infrastructure"] 
+tags: ["Storage", "Proxmox", "Cluster", "Infrastruktur", "Grundlagen"] 
 ---
 
 ## Einleitung
