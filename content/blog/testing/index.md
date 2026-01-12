@@ -37,4 +37,55 @@ Ein Switch ist wie ein Verteilerkasten.
 - Er kann VLANs trennen
 - Er kann Ports als Access oder Trunk konfigurieren
 
+## 🏷️ **3. Was ist ein VLAN?**
 
+Ein VLAN ist ein **virtuelles Netzwerk** innerhalb eines Switches.
+
+Beispiel:
+
+- VLAN 10 = Management
+- VLAN 20 = Server
+- VLAN 30 = Clients
+- VLAN 40 = Storage
+- VLAN 50 = Cluster
+
+Ein VLAN ist wie ein eigenes Zimmer im selben Haus.
+
+## 🔀 **4. Was ist ein Access‑Port?**
+
+Ein Access‑Port gehört **nur zu einem VLAN**.
+
+Beispiel:
+
+- Port 1 → VLAN 10
+- Port 2 → VLAN 10
+- Port 3 → VLAN 20
+
+Clients, Drucker, Management‑Ports → Access.
+
+---
+
+## 🚚 **5. Was ist ein Trunk‑Port?**
+
+Ein Trunk‑Port transportiert **viele VLANs gleichzeitig**.
+
+Beispiel:
+
+- Port 10 → VLAN 10,20,30,40,50
+
+Hyper‑V braucht das, weil eine NIC viele VM‑Netze transportiert.
+
+---
+
+## 🔥 **6. Warum braucht man Glasfaser?**
+
+Weil:
+
+- 1Gbit zu langsam ist
+- Live Migration viel Bandbreite braucht
+- Storage (iSCSI/SMB3) extrem schnell sein muss
+- VMs viel Traffic erzeugen
+
+Darum baut man **25G NICs** ein.
+
+---
