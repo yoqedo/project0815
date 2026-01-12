@@ -114,3 +114,10 @@ wo braucht man Glasfaser
 
 Darum baut man in Server Hochleistungs Netzwerkkarten (SFP) ein **25G NICs**.
 
+---
+
+## 🧩 **Zusammenfassung**
+
+- VLANs strukturieren ein physisches Netzwerk logisch und trennen Geräte, obwohl sie am selben Switch hängen.
+- Trunk‑Ports transportieren mehrere VLANs gleichzeitig über eine einzige Verbindung.
+- Glasfaser ist notwendig, weil Licht in Glas physikalisch effizienter, schneller und störungsfreier übertragen wird als elektrische Signale in Kupfer.
