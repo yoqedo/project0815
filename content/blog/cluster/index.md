@@ -99,3 +99,15 @@ Du brauchst:
 - VLAN 60 → vNIC‑Quorum
 
 ---
+
+## 🧩 Zusammenfassung
+Ein Cluster funktioniert nur, wenn die Hosts über klar getrennte Netzwerkpfade miteinander sprechen können.
+Jeder Pfad hat eine eigene Aufgabe:
+
+- Management – Zugriff auf die Hosts
+- Heartbeat – Überwachung, ob der andere Host lebt
+- Live Migration – Verschieben laufender VMs ohne Unterbruch
+- Storage – Zugriff auf gemeinsamen Speicher
+- Quorum – Entscheidungen im Fehlerfall
+
+Wenn diese Kommunikationswege sauber getrennt, korrekt getaggt und ausreichend schnell sind, arbeitet ein Cluster stabil, vorhersehbar und ohne Ausfälle.
