@@ -52,19 +52,20 @@ Darum braucht man **beides**:
 ![Local image](/einfache_erklärung_server_nic.png)
 ---
 
-## 🔗 2. SET‑Team (NIC‑Bündelung)
+## 🔗2. Switch Embedded Teaming (SET)
 
-NIC2 und NIC3 werden zu einem **SET‑Team** zusammengefasst.
+Mehrere physische NICs können zu einem Team zusammengefasst werden.
+Vorteile:
+- Redundanz
+- Höhere Bandbreite
+- Einheitliche Verwaltung
 
-Das bedeutet:
+Das SET‑Team dient als Grundlage für den virtuellen Switch.
 
-- Mehr Geschwindigkeit (25G + 25G = 50G)
-- Redundanz (wenn eine NIC ausfällt, läuft alles weiter)
-- Hyper‑V sieht nur **eine große NIC**
 
 ---
 
-## 🌐 3. vSwitch (virtueller Switch)
+## 🌐 3. Virtueller Switch (vSwitch)
 
 Auf dem SET‑Team wird ein **vSwitch** erstellt.
 
@@ -79,7 +80,7 @@ Er verteilt den gesamten Traffic:
 
 ---
 
-## 🧠 4. vNICs für den Host
+## 🧠 4. Virtuelle Netzwerkkarten (vNICs)
 
 Der Hyper‑V Host braucht eigene virtuelle Netzwerkkarten (vNICs), z. B.:
 
@@ -92,12 +93,13 @@ Diese vNICs hängen am vSwitch und bekommen **eigene IP‑Adressen**.
 
 ---
 
-## 🏷️ 5. VLANs auf dem Switch
+## 🏷️ 5. VLAN‑Trennung
 
 **Wichtig:**
 
 VLANs werden **immer auf dem physischen Switch** erstellt, nicht im Server.
 
+VLANs strukturieren das Netzwerk logisch.
 Beispiel:
 
 - VLAN 10 → Management
@@ -134,7 +136,11 @@ Der Host selbst bekommt **keine IP in VLAN 20**, weil VLAN 20 nur für die VMs i
 <img width="480" height="609" alt="image" src="https://github.com/user-attachments/assets/9437e910-a87c-4dbe-af43-4fdc4ae4e4fa" />
 
 
-## 🎯 Kurz zusammengefasst
+## 🎯 Zusammenfassung
+
+Ein Hyper‑V‑Netzwerk besteht aus mehreren Schichten: physische NICs, SET‑Team, vSwitch, vNICs und VLANs.
+
+Jede Schicht hat eine klar definierte Aufgabe. Durch diese Struktur entsteht ein flexibles, skalierbares und sicheres Netzwerkdesign
 
 - VLANs werden auf dem **Core Switch** erstellt:
     - NIC2 + NIC3 werden zu einem **SET‑Team**
