@@ -19,11 +19,10 @@ Ein Server hat mehrere Netzwerkkarten.
 Bei Hyper‑V nutzt man:
 
 - **NIC1 (1Gbit)** → nur für Management
-- **NIC2 + NIC3 (25Gbit)** → für alles, was schnell sein muss (VMs, Cluster, Storage)
+- **NIC2 + NIC3 ([Hochgeschwindigkeits Netzwerkkarkten](https://[duckduckgo.com](https://www.fs.com/de/products/242589.html?now_cid=4014))- 10Gbit, 25Gbit)**
 
-NIC2 und NIC3 werden später **zusammengebündelt**, damit sie wie **eine große Leitung** funktionieren.
-
-**Hyper‑V‑Host 1G‑Ports**
+NIC2 und NIC3 werden **zusammengebündelt**, damit sie wie **eine große Leitung** funktionieren.
+Allso der Netzwerk Trafic geht hauptsächlich über diese **Netzwerkkarten**
 
 Ein Hyper‑V‑Server hat zwei Arten von Management:
 
