@@ -7,9 +7,7 @@ tags: ["Hyper-V", "Compute", "Network"]
 Viele IT‑Labs scheitern nicht an Hyper‑V selbst, sondern am Netzwerk dahinter.  
 Begriffe wie **vSwitch**, **NIC Teaming**, **vNICs**, **Management Adapter** oder **Trunking** wirken schnell kompliziert – dabei ist das Hyper‑V Netzwerkmodell eigentlich sehr logisch aufgebaut.
 
-In diesem Artikel erkläre ich das Hyper‑V Netzwerk so, dass es jeder versteht:  
-klar, praxisorientiert und ohne unnötige Theorie.  
-Du lernst, wie du ein stabiles, reproduzierbares Netzwerk für dein Homelab oder deine Testumgebung aufbaust – inklusive Best Practices, typischen Fehlern und einer Struktur, die auch in Enterprise‑Umgebungen funktioniert.
+In diesem Beitrag wird erklärt, wie ein Hyper‑V‑Host sein Netzwerk strukturiert: von physischen NICs über den vSwitch bis hin zu VLAN‑Trennung und virtuellen Netzwerkkarten. Ziel ist es, die physische Realität eines Hypervisors verständlich abzubilden und die einzelnen Schichten klar voneinander zu trennen.
 
 Wenn du Hyper‑V bisher als „kompliziert“ empfunden hast, wird sich das nach diesem Artikel ändern.
 
