@@ -16,7 +16,7 @@ module.exports = {
       bio: `Fokus auf Proxmox, Hyper-V, Netzwerke, Storage und Enterprise-Design. Ich baue klare Systeme und klare Dokumentation.`,
     },
     description: `Technische Dokumentation, Labs und Architektur.`,
-    siteUrl: `https://project0815.com`,
+    siteUrl: `https://project0815.netlify.com`,
     social: {
       twitter: `kylemathews`,
       github: 'https://github.com/yoqedo',
@@ -30,6 +30,18 @@ module.exports = {
       options: {
         path: `${__dirname}/content/blog`,
         name: `blog`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        output: `/`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-robots-txt`,
+      options: {
+        policy: [{ userAgent: '*', allow: '/' }],
       },
     },
     {
