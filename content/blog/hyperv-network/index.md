@@ -136,10 +136,10 @@ Der Host selbst bekommt **keine IP in VLAN 20**, weil VLAN 20 nur für die VMs i
 
 ## 🎯 Kurz zusammengefasst
 
-- VLANs entstehen **auf dem Switch**
+- VLANs werden auf dem **Core Switch** erstellt:
     - NIC2 + NIC3 werden zu einem **SET‑Team**
     - Der **vSwitch** sitzt auf dem SET‑Team
     - Der Host bekommt **vNICs** für Management, Cluster, Storage, Live Migration
-    - Der Switch‑Port ist ein **Trunk** (alle VLANs erlaubt)
+    - Der Core Switch‑Port ist ein **Trunk** (alle VLANs erlaubt)
     - Die VMs bekommen **VLAN‑Tags**, aber der Host nicht
     - VLAN 20 ist **nur für die VMs**, nicht für den Host
