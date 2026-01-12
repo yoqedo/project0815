@@ -140,8 +140,8 @@ export default BlogIndex
 export const Head = () => (
   <>
     <Seo
-      title="Project0815 🧠 Physische Realität verstehen"
-      description="Technische Infrastruktur verstehen 🧠 von physischen Systemen über Cluster bis zu realen IT-Architekturen"
+      title="Project0815 | Physische Realität verstehen"
+      description="Technische Infrastruktur verstehen - von physischen Systemen über Cluster bis zu realen IT-Architekturen"
     />
     <meta name="google-site-verification" content="uhuvV3N8N6GCbRo5cpuhscTDFhYoaJ_6D8h2P2hP8xI" />
   </>
