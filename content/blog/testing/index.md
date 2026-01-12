@@ -39,11 +39,16 @@ Ein Switch ist wie ein Verteilerkasten.
 - Er kann VLANs trennen
 - Er kann Ports als Access oder Trunk konfigurieren
 
+Nich jeder Switch kann VLAN's trennen und mit Access oder Trunk konfiguriert werden.
+Enterprise Switches haben die Möglichkeit VLAN's zu trennen und denn Port entweder 
+als Port Access oder Trunk zu konfigurieren.
+
 ---
 
 ## 🏷️ **3. Was ist ein VLAN?**
 
-Ein VLAN ist ein **virtuelles Netzwerk** innerhalb eines Switches.
+Ein VLAN trennt ein physisches Netzwerk logisch in mehrere unabhängige Netzwerke – 
+so, als würdest du mehrere getrennte Switches benutzen, nur ohne zusätzliche Hardware.
 
 Beispiel:
 
@@ -55,6 +60,10 @@ Beispiel:
 
 Ein VLAN ist wie ein eigenes Zimmer im selben Haus.
 
+**Ohne VLAN** ein grosses Zimmer, alle reden durcheinander!
+
+**Mit VLAN** mehrere Räume im selbem Gebäude, aber getrennte Gespräche!
+
 ---
 
 ## 🔀 **4. Was ist ein Access‑Port?**
@@ -63,15 +72,21 @@ Ein Access‑Port gehört **nur zu einem VLAN**.
 
 Beispiel:
 
-- Port 1 → VLAN 10
+- Port 1 → VLAN 10 (z.B Management Netz)
 - Port 2 → VLAN 10
 - Port 3 → VLAN 20
 
 Clients, Drucker, Management‑Ports → Access.
 
+Der Access Port kann nur ein virtuelles Netzwerk durchlassen!
+
+Einfach erklärt: ein Rohr das nur etwas durchlässt!
+
 ---
 
 ## 🚚 **5. Was ist ein Trunk‑Port?**
+
+Beim Trunk werdeb mehrere VLANs gleichzeitig transportiert.
 
 Ein Trunk‑Port transportiert **viele VLANs gleichzeitig**.
 
@@ -81,16 +96,21 @@ Beispiel:
 
 Hyper‑V braucht das, weil eine NIC viele VM‑Netze transportiert.
 
+Einfach erklärt: ein grosses Rohr das mehreres durch lässt!
+
 ---
 
 ## 🔥 **6. Warum braucht man Glasfaser?**
 
-Weil:
+Glasfaser braucht man, weil elektrische Signale in Kupfer an physikalische Grenzen stoßen.
+Licht in Glas hingegen kann Daten nahezu verlustfrei, schneller und über viel längere Strecken transportieren.
+Glasfaser nutzt also die Eigenschaften der realen Materie optimal aus: weniger Dämpfung, keine elektromagnetischen Störungen und enorme Bandbreite.
 
-- 1Gbit zu langsam ist
-- Live Migration viel Bandbreite braucht
-- Storage (iSCSI/SMB3) extrem schnell sein muss
-- VMs viel Traffic erzeugen
+wo braucht man Glasfaser
 
-Darum baut man **25G NICs** ein.
+- Live Migration, viel Bandbreite
+- Storage (iSCSI/SMB3), muss extrem schnell sein
+- VMs die viel Traffic erzeugen
+
+Darum baut man in Server Hochleistungs Netzwerkkarten (SFP) ein **25G NICs**.
 
