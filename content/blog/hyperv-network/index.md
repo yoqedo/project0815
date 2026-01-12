@@ -138,7 +138,7 @@ Der Host selbst bekommt **keine IP in VLAN 20**, weil VLAN 20 nur für die VMs i
 
 Ein Hyper‑V‑Netzwerk besteht aus mehreren Schichten: physische NICs, SET‑Team, vSwitch, vNICs und VLANs.
 
-Jede Schicht hat eine klar definierte Aufgabe. Durch diese Struktur entsteht ein flexibles, skalierbares und sicheres Netzwerkdesign
+Jede Schicht hat eine klar definierte Aufgabe. Durch diese Struktur entsteht ein flexibles, skalierbares und sicheres Netzwerkdesign.
 
 - VLANs werden auf dem **Core Switch** erstellt:
     - NIC2 + NIC3 werden zu einem **SET‑Team**
