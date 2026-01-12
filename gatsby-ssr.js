@@ -1,12 +1,27 @@
-/**
- * Implement Gatsby's SSR (Server Side Rendering) APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-ssr/
- */
+import React from "react";
 
-/**
- * @type {import('gatsby').GatsbySSR['onRenderBody']}
- */
-exports.onRenderBody = ({ setHtmlAttributes }) => {
-  setHtmlAttributes({ lang: `en` })
-}
+export const onRenderBody = ({ setHeadComponents, setHtmlAttributes }) => {
+  setHtmlAttributes({ lang: "en" });
+
+  setHeadComponents([
+    <script
+      key="plausible-script"
+      async
+      src="https://plausible.io/js/pa-4DYJ3LywDQdSVBcR700ex.js"
+    />,
+    <script
+      key="plausible-init"
+      dangerouslySetInnerHTML={{
+        __html: `
+          window.plausible = window.plausible || function() {
+            (plausible.q = plausible.q || []).push(arguments);
+          };
+          plausible.init = plausible.init || function(i) {
+            plausible.o = i || {};
+          };
+          plausible.init();
+        `,
+      }}
+    />,
+  ]);
+};
