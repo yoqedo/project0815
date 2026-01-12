@@ -79,7 +79,20 @@ Er verteilt den gesamten Traffic:
 
 ---
 
-## 🏷️ 4. VLANs auf dem Switch
+## 🧠 4. vNICs für den Host
+
+Der Hyper‑V Host braucht eigene virtuelle Netzwerkkarten (vNICs), z. B.:
+
+- vNIC‑Management → VLAN 10
+- vNIC‑Cluster → VLAN 40
+- vNIC‑LiveMigration → VLAN 50
+- vNIC‑Storage → VLAN 30
+
+Diese vNICs hängen am vSwitch und bekommen **eigene IP‑Adressen**.
+
+---
+
+## 🏷️ 5. VLANs auf dem Switch
 
 **Wichtig:**
 
@@ -96,19 +109,6 @@ Beispiel:
 Die Ports, an denen NIC2 und NIC3 hängen, werden als **Trunk‑Ports** konfiguriert.
 
 Ein Trunk‑Port lässt **alle VLANs gleichzeitig** durch.
-
----
-
-## 🧠 5. vNICs für den Host
-
-Der Hyper‑V Host braucht eigene virtuelle Netzwerkkarten (vNICs), z. B.:
-
-- vNIC‑Management → VLAN 10
-- vNIC‑Cluster → VLAN 40
-- vNIC‑LiveMigration → VLAN 50
-- vNIC‑Storage → VLAN 30
-
-Diese vNICs hängen am vSwitch und bekommen **eigene IP‑Adressen**.
 
 ---
 
