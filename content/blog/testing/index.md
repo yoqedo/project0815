@@ -25,8 +25,8 @@ Folgende Datenübertragung sind aktuell:
 **Kupfer** überträgt elektrische Signale über Metall, ist billiger und einfacher bei der Installation.
 Ist Störungsanfälliger und hat eine begrenzte Geschwindigkeit und Reichweite.**RJ45 ist langsam.**
 
-**Glasfaser4** überträgt Daten mit Lichtgeschwindigkeit! Deutlich höhere Bandbreite und geht auch über
-längere Distanzen.**SFP+ / SFP28 ist schnell.**
+**Glasfaser** überträgt Daten mit Lichtgeschwindigkeit! Deutlich höhere Bandbreite und geht auch über
+längere Distanzen. **SFP+ / SFP28 ist schnell.**
 
 ---
 
@@ -80,7 +80,7 @@ Clients, Drucker, Management‑Ports → Access.
 
 Der Access Port kann nur ein virtuelles Netzwerk durchlassen!
 
-Einfach erklärt: ein Rohr das nur etwas durchlässt!
+**Einfach erklärt**: ein Rohr das nur etwas durchlässt!
 
 ---
 
@@ -96,7 +96,7 @@ Beispiel:
 
 Hyper‑V braucht das, weil eine NIC viele VM‑Netze transportiert.
 
-Einfach erklärt: ein grosses Rohr das mehreres durch lässt!
+**Einfach erklärt**: ein grosses Rohr das mehreres durch lässt!
 
 ---
 
