@@ -1,6 +1,6 @@
 ---
 title: "Cluster verstehen: Wie zwei Hosts wirklich zusammenarbeiten"
-date: "2025-12-05"
+date: "2025-10-29"
 description: "Bevor zwei Hyper‑V‑Hosts als Cluster zusammenarbeiten können, müssen sie sich zuverlässig austauschen können – über mehrere getrennte Netzwerkpfade, die jeweils eine ganz bestimmte Aufgabe erfüllen."
 tags: ["Cluster", "Hyper-V", "Infrastruktur", "VLAN", "Grundlagen"] 
 ---
