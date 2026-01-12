@@ -124,6 +124,9 @@ Jede VM bekommt ihr eigenes VLAN:
 
 Der Host selbst bekommt **keine IP in VLAN 20**, weil VLAN 20 nur für die VMs ist.
 
+**VLANs werden im Switch definiert.**
+**Die Firewall routet nur zwischen ihnen.**
+
 ---
 
 ## 🎯 Kurz zusammengefasst
@@ -131,7 +134,7 @@ Der Host selbst bekommt **keine IP in VLAN 20**, weil VLAN 20 nur für die VMs i
 - VLANs entstehen **auf dem Switch**
     - NIC2 + NIC3 werden zu einem **SET‑Team**
     - Der **vSwitch** sitzt auf dem SET‑Team
-    - Der Switch‑Port ist ein **Trunk** (alle VLANs erlaubt)
     - Der Host bekommt **vNICs** für Management, Cluster, Storage, Live Migration
+    - Der Switch‑Port ist ein **Trunk** (alle VLANs erlaubt)
     - Die VMs bekommen **VLAN‑Tags**, aber der Host nicht
     - VLAN 20 ist **nur für die VMs**, nicht für den Host
