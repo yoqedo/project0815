@@ -129,6 +129,11 @@ Der Host selbst bekommt **keine IP in VLAN 20**, weil VLAN 20 nur für die VMs i
 
 ---
 
+**Abschliessende Grafik für ein besseres Verständnis!**
+
+<img width="480" height="609" alt="image" src="https://github.com/user-attachments/assets/9437e910-a87c-4dbe-af43-4fdc4ae4e4fa" />
+
+
 ## 🎯 Kurz zusammengefasst
 
 - VLANs entstehen **auf dem Switch**
