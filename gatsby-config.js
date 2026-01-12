@@ -16,7 +16,7 @@ module.exports = {
       bio: `Fokus auf Proxmox, Hyper-V, Netzwerke, Storage und Enterprise-Design. Ich baue klare Systeme und klare Dokumentation.`,
     },
     description: `Technische Dokumentation, Labs und Architektur.`,
-    siteUrl: `https://project0815.netlify.com`,
+    siteUrl: `https://project0815.netlify.app`,
     social: {
       twitter: `kylemathews`,
       github: 'https://github.com/yoqedo',
