@@ -138,11 +138,15 @@ export default BlogIndex
  * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
  */
 export const Head = () => (
-  <Seo
-    title="Project0815 – Physische Realität verstehen"
-    description="Technische Infrastruktur verstehen – von physischen Systemen über Cluster bis zu realen IT‑Architekturen. Project0815 dokumentiert reproduzierbare, minimalistische Lösungen für moderne Infrastruktur."
-  />
+  <>
+    <Seo
+      title="Project0815 🧠 Physische Realität verstehen"
+      description="Technische Infrastruktur verstehen 🧠 von physischen Systemen über Cluster bis zu realen IT-Architekturen"
+    />
+    <meta name="google-site-verification" content="uhuvV3N8N6GCbRo5cpuhscTDFhYoaJ_6D8h2P2hP8xI" />
+  </>
 )
+
 export const pageQuery = graphql`
   {
     site {
