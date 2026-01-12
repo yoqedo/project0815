@@ -94,4 +94,3 @@ Weil:
 
 Darum baut man **25G NICs** ein.
 
----
