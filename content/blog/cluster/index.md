@@ -1,5 +1,11 @@
+---
+title: "Cluster verstehen: Wie zwei Hosts wirklich zusammenarbeiten"
+date: "2025-12-5"
+description: "Bevor zwei Hyper‑V‑Hosts als Cluster zusammenarbeiten können, müssen sie sich zuverlässig austauschen können – über mehrere getrennte Netzwerkpfade, die jeweils eine ganz bestimmte Aufgabe erfüllen."
+tags: ["Cluster", "Hyper-V", "Infrastruktur", "VLAN", "Grundlagen"] 
+---
 
-🔍 Einleitung
+## 🔍 Einleitung
 Bevor zwei Hyper‑V‑Hosts als Cluster zusammenarbeiten können, müssen sie sich zuverlässig austauschen können – über mehrere getrennte Netzwerkpfade, die jeweils eine ganz bestimmte Aufgabe erfüllen. Ein Cluster funktioniert nur dann stabil, wenn diese Kommunikationswege sauber getrennt, klar definiert und physisch wie logisch korrekt aufgebaut sind.
 In diesem Beitrag schauen wir uns an, wie zwei Hyper‑V‑Hosts miteinander sprechen, welche VLANs dafür notwendig sind und welche Rolle Heartbeat, Live Migration, Storage‑Traffic und Quorum im täglichen Betrieb spielen. Wenn du diese Grundlagen verstehst, verstehst du auch, warum ein Cluster stabil läuft – oder warum er im Fehlerfall richtig reagiert.
 
