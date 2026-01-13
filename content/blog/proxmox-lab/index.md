@@ -1,4 +1,3 @@
-
 ---
 title: "Proxmox‑Lab auf Hetzner – Architektur, Aufbau und Best Practices"
 date: "2026-01-13"
