@@ -1,7 +1,7 @@
 ---
 title: "SFP+, SFP28, DAC & AOC – Die Grundlagen vor jedem Storage‑Design"
 date: "2025-11-10"
-description: "Bevor zwei Hyper‑V‑Hosts als Cluster zusammenarbeiten können, müssen sie sich zuverlässig austauschen können – über mehrere getrennte Netzwerkpfade, die jeweils eine ganz bestimmte Aufgabe erfüllen."
+description: "Die wichtigsten Unterschiede zwischen SFP+, SFP28, DAC, AOC und Glasfaser – kompakt erklärt für moderne Server‑ und Storage‑Netzwerke."
 tags: ["Netzwerk", "Storage", "Verkabelung", "Grundlagen"] 
 ---
 ## Einleitung
