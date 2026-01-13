@@ -13,8 +13,8 @@ module.exports = {
     author: {
       name: `Luk Bergen`,
       role: `System Engineer & IT Architect`,
-      bio: `Spezialisiert auf Proxmox, Hyper-V, Netzwerke, Storage und reproduzierbare Enterprise-Architekturen.
-Ich baue klare Systeme — und dokumentiere sie modular, verständlich und zukunftssicher.`,
+      bio: `Proxmox & Virtualization Consultant.
+Ich dokumentiere meinen Weg vom Lab zur produktionsreifen Architektur – mit Fokus auf Migrationen von VMware/Hyper‑V zu Proxmox, klarer Dokumentation und praxisnahen Infrastrukturen.`,
     },
     description: `Technische Dokumentation, Labs und Architektur.`,
     siteUrl: `https://project0815.netlify.app`,
