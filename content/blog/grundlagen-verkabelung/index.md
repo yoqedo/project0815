@@ -11,7 +11,24 @@ Wer moderne IT‑Infrastruktur baut – egal ob Hyper‑V, Proxmox, VMware oder 
 Viele kennen die Wörter, aber kaum jemand versteht wirklich, was sie bedeuten und wann man was einsetzen sollte.
 Dieser Artikel erklärt alles einfach, klar und schülergerecht, damit du später Storage‑Design, Cluster‑Netzwerke oder Switch‑Topologien sauber planen kannst.
 
-## 1. Was sind SFP‑Ports?
+---
+
+## 1. Die wichtigste Grundregel (das Big Picture)
+Bevor wir in die Details gehen, musst du eine einzige Regel verstehen, die ALLES erklärt:
+
+**👉 Der Port bestimmt die Geschwindigkeit.**
+**Das Kabel bestimmt nur die Entfernung.**
+
+Das bedeutet:
+- SFP+ Port → 10G
+- SFP28 Port → 25G
+- DAC/AOC/Glasfaser → nur Transportmedium
+
+Wenn dieser Satz sitzt, kannst du jede Umgebung korrekt verkabeln – egal ob Server, Storage oder Switch.
+
+---
+
+## 2. Was sind SFP‑Ports?
 SFP‑Ports sind kleine Steckplätze an Servern und Switches.
 Sie ersetzen klassische RJ45‑Ports, wenn man höhere Geschwindigkeiten braucht.
 Es gibt zwei wichtige Varianten:
@@ -23,7 +40,7 @@ Wichtig:
 
 ---
 
-## 2. Welche Kabeltypen gibt es?
+## 3. Welche Kabeltypen gibt es?
 Es gibt drei Arten, die man kennen muss:
 
 **A) DAC – Direct Attach Copper**
@@ -67,7 +84,7 @@ Typische Nutzung:
 
 ---
 
-## 3. Welche Geschwindigkeit liefern die Kabel?
+## 4. Welche Geschwindigkeit liefern die Kabel?
 Ganz einfach:
 
 | Kabeltyp             | SFP+            | SFP28         |
@@ -80,7 +97,7 @@ Ganz einfach:
 
 ---
 
-## 4. Wann nimmt man welchen Kabeltyp?
+## 5. Wann nimmt man welchen Kabeltyp?
 
 | Situation                                 | Empfehlung            |
 |:------------------------------------------|:----------------------|
@@ -93,7 +110,7 @@ Ganz einfach:
 
 ---
 
-## 5. Warum ist das wichtig für Storage?
+## 6. Warum ist das wichtig für Storage?
 
 Storage reagiert empfindlich auf:
 - Latenz
@@ -123,7 +140,7 @@ sauber planen.
 
 ---
 
-## 6. Die wichtigste Erkenntnis
+## 7. Die wichtigste Erkenntnis
 - SFP+ = 10G
 - SFP28 = 25G
 - DAC = kurz & günstig
@@ -133,7 +150,7 @@ sauber planen.
 
 ---
 
-## 7. Fazit
+## 8. Fazit
 Wer moderne Infrastruktur baut, muss zuerst die Grundlagen der SFP‑Technik verstehen.
 Erst danach macht es Sinn, über Storage‑Design, Cluster‑Netzwerke oder Switch‑Architekturen zu sprechen.
 Mit diesem Wissen kannst du:
