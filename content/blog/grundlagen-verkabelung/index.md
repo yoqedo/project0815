@@ -8,6 +8,7 @@ tags: ["Netzwerk", "Storage", "Verkabelung", "Grundlagen"]
 
 Bevor man Storage, Cluster oder Core‑Switching plant.
 Wer moderne IT‑Infrastruktur baut – egal ob Hyper‑V, Proxmox, VMware oder Storage – begegnet sehr schnell Begriffen wie SFP+, SFP28, DAC, AOC oder Glasfaser‑Modulen.
+
 Viele kennen die Wörter, aber kaum jemand versteht wirklich, was sie bedeuten und wann man was einsetzen sollte.
 Dieser Artikel erklärt alles einfach, klar und schülergerecht, damit du später Storage‑Design, Cluster‑Netzwerke oder Switch‑Topologien sauber planen kannst.
 
