@@ -10,6 +10,15 @@ const BlogIndex = ({ data, location }) => {
   const posts = data.allMarkdownRemark.nodes
   const [selectedTag, setSelectedTag] = React.useState(null)
 
+  // Tag aus URL-Parameter lesen
+  React.useEffect(() => {
+    const params = new URLSearchParams(location.search)
+    const tagFromUrl = params.get('tag')
+    if (tagFromUrl) {
+      setSelectedTag(decodeURIComponent(tagFromUrl))
+    }
+  }, [location.search])
+
   // Alle einzigartigen Tags sammeln
   const allTags = React.useMemo(() => {
     const tags = new Set()
@@ -46,29 +55,6 @@ const BlogIndex = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <Bio />
       
-      {allTags.length > 0 && (
-        <div className="tag-filter">
-          <h3>Filter nach Kategorie:</h3>
-          <div className="tag-filter-buttons">
-            <button
-              className={`filter-btn ${selectedTag === null ? "active" : ""}`}
-              onClick={() => setSelectedTag(null)}
-            >
-              Alle
-            </button>
-            {allTags.map(tag => (
-              <button
-                key={tag}
-                className={`filter-btn ${selectedTag === tag ? "active" : ""}`}
-                onClick={() => setSelectedTag(tag)}
-              >
-                {tag}
-              </button>
-            ))}
-          </div>
-        </div>
-      )}
-
       <div className="posts-count">
         {filteredPosts.length > 0 && (
           <p>{filteredPosts.length} Post{filteredPosts.length !== 1 ? "s" : ""} gefunden</p>
@@ -111,12 +97,16 @@ const BlogIndex = ({ data, location }) => {
                     )}
                   </header>
                   <section>
-                    <p
+                    <div
+                      className="post-description"
                       dangerouslySetInnerHTML={{
                         __html: post.frontmatter.description || post.excerpt,
                       }}
                       itemProp="description"
                     />
+                    <Link to={post.fields.slug} className="read-more-link">
+                      Mehr lesen →
+                    </Link>
                   </section>
                 </article>
               </li>

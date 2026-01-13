@@ -1,6 +1,5 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
@@ -21,17 +20,6 @@ const Bio = () => {
 
  return (
   <div className="bio">
-    <StaticImage
-      className="bio-avatar"
-      layout="fixed"
-      formats={["auto", "webp", "avif"]}
-      src="../images/profile-pic.png"
-      width={80}
-      height={80}
-      quality={95}
-      alt="Profile picture"
-    />
-
     <div className="bio-text">
       <p><strong>{author.name}</strong></p>
       <p>{author.role}</p>
