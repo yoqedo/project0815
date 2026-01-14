@@ -419,7 +419,7 @@ html.dark-mode .desktop-filter-btn {
 }
 
 .post-list-item h2 {
-  font-size: var(--fontSize-3);
+  font-size: var(--fontSize-2);
   color: var(--color-primary);
   margin-bottom: var(--spacing-2);
   margin-top: var(--spacing-0);
@@ -437,6 +437,7 @@ html.dark-mode .desktop-filter-btn {
   text-overflow: ellipsis;
   line-height: var(--lineHeight-relaxed);
   margin-bottom: var(--spacing-2);
+  font-size: 0.9rem;
 }
 
 .post-description p {
