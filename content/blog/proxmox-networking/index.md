@@ -30,21 +30,31 @@ LVM‑thin
 👉 Für dein Consulting‑Lab: LVM‑thin.
 
 ## 🧩 3. Netzwerk‑Grundlagen
-- Proxmox erkennt NICs als enoX, enpXsY, ensXfY.
-- PCIe‑Karten (SFP+, SFP28) erscheinen fast immer als enpXsY.
-- Hardware bleibt Hardware — unabhängig vom Hypervisor.
+- Proxmox erkennt NICs als **enoX** und PCI NIC's als **enpXsY**, **ensXfY**.
+```
+eno1 → (RJ45 Port 1
+eno2 → (RJ45) Port 2
+enp3s0f0 → (SFP+) Port 1 
+enp3s0f1 → (SFP+) Port 2
+```
 
 ## 🧩 4. Bonding (Teaming)
 - Bündelt mehrere Ports zu einer logischen NIC.
-- active‑backup → Redundanz ohne Switch‑Konfiguration
-- LACP (802.3ad) → Speed + Redundanz (ideal für 10G/25G)
+```
+bond0 = eno1 + eno2 (active-backup) - Redundanz ohne Switch‑Konfiguration
+bond1 = enp3s0f0 + enp3s0f1 (LACP) - Speed + Redundanz (ideal für 10G/25G)
+```
+Das pendent zu Windows Hyper V wäre (NIC Teaming) 
 
 ## 🧩 5. Bridges (vmbrX)
 - Eine Bridge ist ein virtueller Switch.
 - Die IP liegt immer auf der Bridge, nie auf dem Bond.
 - Der Host hängt selbst an der Bridge.
 - VMs hängen ebenfalls an der Bridge.
-👉 Das ist logischer und übersichtlicher als Hyper‑V.
+
+👉 Das pendent zu Hyper v wäre das ein vSwitch.
+
+**Hinweis: Jedes Netz bekommt seinen eigenen **Bridge** (vmbr0 - Management Netz, vmbr1 - Cluster Netz usw.)**
 
 ## 🧩 6. VLAN‑Design
 - Proxmox kann VLAN‑aware Bridges nutzen.
@@ -52,33 +62,39 @@ LVM‑thin
 - Ideal für Multi‑Network‑Designs.
 
 ## 🧩 7. Multi‑Network‑Design (Enterprise‑Style)
-Trennung von:
+Jedes Netz bekommt seinen eigenes Subnetz:
 - Management
 - Cluster
 - Live‑Migration
 - Storage
 - DMZ / Server‑Netz
+```
 Beispiel:
 bond0 → vmbr0 (Management)
 bond1 → vmbr1 (Cluster)
 bond1 → vmbr2 (Migration, VLAN 20)
 bond1 → vmbr3 (Storage, VLAN 30)
+```
+Für jedes Netz wird nun ein **Bridge - vmbrX** erstellt und auf den bond (bond1) gelegt.
+
+**Sehr wichtig: In Proxmox bekommt immer die **Bridge** die IP Adresse des zugehörigen Netzes!**
 
 ## 🧩 8. Hetzner‑Spezialfall
 Hetzner erlaubt kein Layer‑2 Bridging.
 Darum:
 - vmbr0 = Public IP
 - alle anderen vmbrX = Private Netze
-- Proxmox = Router
+- Proxmox über das Routing
 - NAT + IP‑Forwarding nötig
 - VMs bekommen private IPs
 
 ## 🧩 9. Zugriff auf VMs
-Port‑Forwarding
+Port‑Forwarding ist möglich aber nicht die beste Lösung.
 - Möglich, aber unsicher
 - Nur mit Firewall‑Regeln
-⭐ VPN (beste Lösung)
-- WireGuard / Tailscale / OpenVPN
+
+⭐ VPN ist die beste Lösung
+- WireGuard / Tailscale / OpenVPN als Client
 - Du bekommst eine VPN‑IP
 - Zugriff auf alle internen Netze
 - Keine Ports offen
@@ -100,3 +116,7 @@ Du kannst jetzt:
 - Hetzner‑Routing verstehen
 - VPN‑Zugriff einrichten
 - VMs professionell anbinden
+
+**Proxmox** wirkt im ersten Moment komplex, doch sobald man das Netzwerkmodell wirklich versteht, fügt sich alles logisch zusammen. Bonds, Bridges, VLANs und Routing sind keine isolierten Funktionen, sondern Bausteine eines klaren, modernen Architekturkonzepts. Wer diese Grundlagen beherrscht, kann Proxmox stabil, sicher und skalierbar betreiben – egal ob im Homelab, im KMU oder in einer produktiven Umgebung.
+
+In den nächsten Artikeln dieser Serie gehe ich darauf ein, wie sich dieses Wissen konkret anwenden lässt: von der Architektur auf Hetzner über Routing‑Setups bis hin zu VPN‑Zugriff und Storage‑Design. Schritt für Schritt entsteht so ein vollständiges, professionelles Proxmox‑Lab, das nicht nur funktioniert, sondern auch verstanden wird.
