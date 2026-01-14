@@ -35,7 +35,7 @@ Ebenfalls wurden die SFP+ Ports in ein Bond **bond1** genommen. So sind nun beid
 bond0 = eno1 + eno2 (active-backup) - Redundanz ohne Switch‑Konfiguration
 bond1 = enp3s0f0 + enp3s0f1 (LACP) - Speed + Redundanz (ideal für 10G/25G)
 ```
-👉 Das pendent zu Windows Hyper V wäre (NIC Teaming) 
+👉 Das Pendant zu Windows Hyper-V wäre (NIC Teaming) 
 
 ## 🧩 4. Bridges (vmbrX)
 - Eine Bridge ist ein virtueller Switch.
@@ -43,7 +43,7 @@ bond1 = enp3s0f0 + enp3s0f1 (LACP) - Speed + Redundanz (ideal für 10G/25G)
 - Der Host hängt selbst an der Bridge.
 - VMs hängen ebenfalls an der Bridge.
 
-👉 Das pendent zu Hyper v wäre das ein vSwitch.
+👉 Das Pendant zu Hyper-V wäre das ein vSwitch.
 
 **Hinweis: Jedes Netz bekommt seinen eigenen **Bridge** (vmbr0 - Management Netz, vmbr1 - Cluster Netz usw.)**
 
