@@ -11,7 +11,7 @@ module.exports = {
   siteMetadata: {
     title: `Project0815`,
     author: {
-      name: `Luk Bergen`,
+      name: `L. S.`,
       role: `Proxmox & Virtualization Consultant`,
       bio: `Ich dokumentiere meinen Weg vom Lab zur produktionsreifen Architektur – mit Fokus auf Migrationen von VMware/Hyper‑V zu Proxmox, klarer Dokumentation und praxisnahen Infrastrukturen.`,
     },
