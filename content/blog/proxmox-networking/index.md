@@ -1,3 +1,11 @@
+---
+title: "Proxmox Networking verstehen (Bonds, Bridges, VLANs, Routing)"
+date: "2026-01-13"
+description: "Eine klare und verständliche Einführung in das Proxmox‑Netzwerkmodell.
+Dieser Artikel erklärt Bonds, Bridges, VLANs und Routing so, dass sie sofort logisch werden."
+tags: ["Proxmox", "Virtualisierung", "Netzwerk", "Linux", "HomeLab"] 
+---
+
 ## 🧩 1. Hypervisor‑Grundlagen
 - Proxmox nutzt KVM für VMs und LXC für Container.
 - Ein Node ist ein physischer Server.
