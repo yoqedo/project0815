@@ -40,11 +40,15 @@ enp3s0f1 → (SFP+) Port 2
 
 ## 🧩 4. Bonding (Teaming)
 - Bündelt mehrere Ports zu einer logischen NIC.
+
+Hier in dem Beispiel wurden die 2 RJ45 Ports zu einem Bond **bond0** zusammen genommen.
+
+Ebenfalls wurden die SFP+ Ports in ein Bond **bond1** genommen. So sind nun beide Datenübertragungen sauber getrennt.
 ```
 bond0 = eno1 + eno2 (active-backup) - Redundanz ohne Switch‑Konfiguration
 bond1 = enp3s0f0 + enp3s0f1 (LACP) - Speed + Redundanz (ideal für 10G/25G)
 ```
-Das pendent zu Windows Hyper V wäre (NIC Teaming) 
+👉 Das pendent zu Windows Hyper V wäre (NIC Teaming) 
 
 ## 🧩 5. Bridges (vmbrX)
 - Eine Bridge ist ein virtueller Switch.
