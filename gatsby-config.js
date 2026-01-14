@@ -11,8 +11,8 @@ module.exports = {
   siteMetadata: {
     title: `Project0815`,
     author: {
-      name: `L. S.`,
-      role: `Proxmox & Virtualization Consultant`,
+      name: `L. S. – System Engineer & Virtualization`,
+      role: ``,
       bio: `Ich dokumentiere meinen Weg vom Lab zur produktionsreifen Architektur – mit Fokus auf Migrationen von VMware/Hyper‑V zu Proxmox, klarer Dokumentation und praxisnahen Infrastrukturen.`,
     },
     description: `Technische Dokumentation, Labs und Architektur.`,
