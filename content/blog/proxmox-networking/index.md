@@ -110,16 +110,16 @@ Port‑Forwarding ist möglich aber nicht die beste Lösung.
 - Storage → Backends
 - VM → Hardware, Options, Console, Snapshots
 
-⭐ Was du jetzt kannst
-Du kannst jetzt:
+⭐ Was du jetzt erklären kannst:
 - Proxmox sauber installieren
+- was der Grund eines Clusters ist
+- was eno0 und enp3s0f0 sind
 - Storage richtig auswählen
-- Bonds und Bridges korrekt bauen
+- zwischen Bonds und Bridges unterscheiden
+- wo Bridges und IP Adressen definiert werden
 - VLAN‑Trunking verstehen
 - Multi‑Network‑Designs planen
 - Hetzner‑Routing verstehen
-- VPN‑Zugriff einrichten
-- VMs professionell anbinden
 
 **Proxmox** wirkt im ersten Moment komplex, doch sobald man das Netzwerkmodell wirklich versteht, fügt sich alles logisch zusammen. Bonds, Bridges, VLANs und Routing sind keine isolierten Funktionen, sondern Bausteine eines klaren, modernen Architekturkonzepts. Wer diese Grundlagen beherrscht, kann Proxmox stabil, sicher und skalierbar betreiben – egal ob im Homelab, im KMU oder in einer produktiven Umgebung.
 
