@@ -17,28 +17,15 @@ Ein Grundlagenartikel, der dir hilft, Proxmox‑Setups professionell zu planen �
 - Mehrere Nodes bilden einen Cluster.
 - Storage kann lokal oder remote sein (LVM‑thin, ZFS, NFS, iSCSI, Ceph).
 
-## 🧩 2. Storage‑Design
-ZFS
-- Dateisystem + Volume Manager
-- Prüfsummen, Snapshots, Selbstheilung
-- RAM‑hungrig
-- Ideal für Multi‑Disk‑Setups
-LVM‑thin
-- Schnell, leicht, flexibel
-- Ideal für Hetzner, Single‑Disk, NVMe
-- Perfekt für VMs
-👉 Für dein Consulting‑Lab: LVM‑thin.
-
-## 🧩 3. Netzwerk‑Grundlagen
+## 🧩 2. Netzwerk‑Grundlagen
 - Proxmox erkennt NICs als **enoX** und PCI NIC's als **enpXsY**, **ensXfY**.
 ```
-eno1 → (RJ45 Port 1
-eno2 → (RJ45) Port 2
-enp3s0f0 → (SFP+) Port 1 
-enp3s0f1 → (SFP+) Port 2
+eno1      → RJ45 Port 1 (Onboard)
+eno2      → RJ45 Port 2 (Onboard)
+enp3s0f0  → SFP+ Port 1 (PCIe NIC)
+enp3s0f1  → SFP+ Port 2 (PCIe NIC)
 ```
-
-## 🧩 4. Bonding (Teaming)
+## 🧩 3. Bonding (Teaming)
 - Bündelt mehrere Ports zu einer logischen NIC.
 
 Hier in dem Beispiel wurden die 2 RJ45 Ports zu einem Bond **bond0** zusammen genommen.
@@ -50,7 +37,7 @@ bond1 = enp3s0f0 + enp3s0f1 (LACP) - Speed + Redundanz (ideal für 10G/25G)
 ```
 👉 Das pendent zu Windows Hyper V wäre (NIC Teaming) 
 
-## 🧩 5. Bridges (vmbrX)
+## 🧩 4. Bridges (vmbrX)
 - Eine Bridge ist ein virtueller Switch.
 - Die IP liegt immer auf der Bridge, nie auf dem Bond.
 - Der Host hängt selbst an der Bridge.
@@ -60,12 +47,12 @@ bond1 = enp3s0f0 + enp3s0f1 (LACP) - Speed + Redundanz (ideal für 10G/25G)
 
 **Hinweis: Jedes Netz bekommt seinen eigenen **Bridge** (vmbr0 - Management Netz, vmbr1 - Cluster Netz usw.)**
 
-## 🧩 6. VLAN‑Design
+## 🧩 5. VLAN‑Design
 - Proxmox kann VLAN‑aware Bridges nutzen.
 - VMs können VLAN‑Tags bekommen.
 - Ideal für Multi‑Network‑Designs.
 
-## 🧩 7. Multi‑Network‑Design (Enterprise‑Style)
+## 🧩 6. Multi‑Network‑Design (Enterprise‑Style)
 Jedes Netz bekommt seinen eigenes Subnetz:
 - Management
 - Cluster
@@ -83,28 +70,20 @@ Für jedes Netz wird nun ein **Bridge - vmbrX** erstellt und auf den bond (bond1
 
 **Sehr wichtig: In Proxmox bekommt immer die **Bridge** die IP Adresse des zugehörigen Netzes!**
 
-## 🧩 8. Hetzner‑Spezialfall
-Hetzner erlaubt kein Layer‑2 Bridging.
-Darum:
-- vmbr0 = Public IP
-- alle anderen vmbrX = Private Netze
-- Proxmox über das Routing
-- NAT + IP‑Forwarding nötig
-- VMs bekommen private IPs
+## 🧩 7. Finale Netzwerkübersicht
+So sieht ein typisches Proxmox‑Netzwerkdesign aus:
+```
+eno1 ─┐
+      ├─ bond0 ── vmbr0 (Management)
+eno2 ─┘
 
-## 🧩 9. Zugriff auf VMs
-Port‑Forwarding ist möglich aber nicht die beste Lösung.
-- Möglich, aber unsicher
-- Nur mit Firewall‑Regeln
+enp3s0f0 ─┐
+          ├─ bond1 ── vmbr1 (Cluster)
+enp3s0f1 ─┘           vmbr2 (Migration)
+                      vmbr3 (Storage)
+```
 
-⭐ VPN ist die beste Lösung
-- WireGuard / Tailscale / OpenVPN als Client
-- Du bekommst eine VPN‑IP
-- Zugriff auf alle internen Netze
-- Keine Ports offen
-- Maximale Sicherheit
-
-## 🧩 10. GUI‑Struktur
+## 🧩 8. GUI‑Struktur
 - Datacenter → Clusterweite Einstellungen
 - Node → Netzwerk, Disks, System
 - Storage → Backends
