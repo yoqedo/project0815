@@ -39,7 +39,7 @@ bond1 = enp3s0f0 + enp3s0f1 (LACP) - Speed + Redundanz (ideal für 10G/25G)
 
 ## 🧩 4. Bridges (vmbrX)
 - Eine Bridge ist ein virtueller Switch.
-- Die IP liegt immer auf der Bridge, nie auf dem Bond.
+- Sehr wichtig: Die IP Adresse liegt immer auf der Bridge, nie auf dem Bond.
 - Der Host hängt selbst an der Bridge.
 - VMs hängen ebenfalls an der Bridge.
 
@@ -67,8 +67,6 @@ bond1 → vmbr2 (Migration, VLAN 20)
 bond1 → vmbr3 (Storage, VLAN 30)
 ```
 Für jedes Netz wird nun ein **Bridge - vmbrX** erstellt und auf den bond (bond1) gelegt.
-
-**Sehr wichtig: In Proxmox bekommt immer die **Bridge** die IP Adresse des zugehörigen Netzes!**
 
 ## 🧩 7. Finale Netzwerkübersicht
 So sieht ein typisches Proxmox‑Netzwerkdesign aus:
