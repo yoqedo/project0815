@@ -5,6 +5,10 @@ description: "Eine klare und verständliche Einführung in das Proxmox‑Netzwer
 Dieser Artikel erklärt Bonds, Bridges, VLANs und Routing so, dass sie sofort logisch werden."
 tags: ["Proxmox", "Virtualisierung", "Netzwerk", "Linux", "HomeLab"] 
 ---
+## Einleitung
+Proxmox ist ein unglaublich mächtiger Hypervisor – aber viele stolpern schon beim ersten großen Thema: dem Netzwerk. Begriffe wie Bridges, Bonds, VLANs oder Routing wirken auf den ersten Blick komplex, dabei folgt Proxmox einem klaren, logischen Modell, das sich perfekt für moderne Virtualisierungs‑Umgebungen eignet.
+In diesem Artikel zeige ich, wie Proxmox Netzwerke wirklich funktionieren, warum das Konzept so viel übersichtlicher ist als bei anderen Hypervisoren und wie man Bonds, Bridges und VLANs sauber kombiniert.
+Ein Grundlagenartikel, der dir hilft, Proxmox‑Setups professionell zu planen – egal ob im Homelab, im KMU oder im Rechenzentrum.
 
 ## 🧩 1. Hypervisor‑Grundlagen
 - Proxmox nutzt KVM für VMs und LXC für Container.
