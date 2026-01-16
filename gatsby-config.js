@@ -13,7 +13,7 @@ module.exports = {
     author: {
       name: `L. S. – System Engineer & Virtualization`,
       role: ``,
-      bio: `Ich dokumentiere meinen Weg vom Lab zur produktionsreifen Architektur – mit Fokus auf Migrationen von VMware/Hyper‑V zu Proxmox, klarer Dokumentation und praxisnahen Infrastrukturen.`,
+      bio: `Compute, Storage und Netzwerk — sauber geplant und dokumentiert.`,
     },
     description: `Technische Dokumentation, Labs und Architektur.`,
     siteUrl: `https://project0815.netlify.app`,
