@@ -11,7 +11,7 @@ module.exports = {
   siteMetadata: {
     title: `Project0815`,
     author: {
-      name: `L. S. – System Engineer & Virtualization`,
+      name: `L. S. – System Engineer`,
       role: ``,
       bio: `Compute, Storage und Netzwerk — sauber geplant und dokumentiert.`,
     },
