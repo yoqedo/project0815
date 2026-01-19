@@ -1,16 +1,12 @@
 ---
 title: "Proxmox Netzwerk - & Storage Design"
 date: "2026-01-19"
-description: "Diese Dokumentation beschreibt den Aufbau einer modernen, skalierbaren und realitätsnahen Proxmox-Infrastruktur. Sie erklärt, wie interne NVMe-Disks für das Betriebssystem genutzt werden, wie externes Storage (z. B. NFS, iSCSI oder Ceph) angebunden wird und wie ein professionelles Netzwerkdesign mit Bonding, Bridges und VLANs umgesetzt wird.  
-Der Fokus liegt darauf, eine Umgebung zu schaffen, die sowohl für Labs als auch für produktive KMU-Setups geeignet ist und gleichzeitig die Grundlage für spätere Cluster-Funktionen wie HA, Live-Migration und Ceph-Storage bildet.
-"
+description: "Diese Dokumentation beschreibt den Aufbau einer modernen, skalierbaren und realitätsnahen Proxmox-Infrastruktur."
 tags: ["Proxmox", "Storage", "Netzwerk"] 
 ---
+## Einleitung
+Ich erkläre, wie interne NVMe-Disks für das Betriebssystem genutzt werden, wie externes Storage (z. B. NFS, iSCSI oder Ceph) angebunden wird und wie ein professionelles Netzwerkdesign mit Bonding, Bridges und VLANs umgesetzt wird.  
 
-# 📘 Proxmox Netzwerk- & Storage-Design
-*Dokumentation für Infrastruktur- und Cluster-Vorbereitung*
-
----
 
 ## 1. Überblick
 
