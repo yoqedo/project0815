@@ -1,6 +1,10 @@
-# Snapshots & Backups – der unterschätzte Unterschied  
-## Warum viele Labs scheitern, bevor sie überhaupt anfangen
-
+---
+title: "Snapshots & Backups – der unterschätzte Unterschied  "
+date: "2026-01-22"
+description: "Ein tiefgehender, praxisorientierter Vergleich zwischen Snapshots und Backups – zwei Technologien, die oft verwechselt werden, aber völlig unterschiedliche Aufgaben erfüllen"
+tags: ["Storage", "HomeLab"] 
+---
+## Einleitung
 In modernen Homelabs und kleinen IT‑Umgebungen taucht immer wieder dieselbe Frage auf:  
 **„Reichen Snapshots nicht als Backup?“**
 
